@@ -9,7 +9,7 @@ cd $(dirname $0)
 
 echo -e "# Presentations\n" > index.md
 
-PATHS=$(find -mindepth 2 -maxdepth 2 -name '*.pdf')
+PATHS=$(find -mindepth 2 -maxdepth 2 -name '*.pdf' | sort)
 
 for path in $PATHS; do
   DIRECTORY_NAME=$(echo "$path" | sed -E 's/^\.\/([^/]+)\/.+/\1/')
